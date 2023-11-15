@@ -16,9 +16,8 @@ const getCookie = (name) => {
 window.addEventListener('load', function() {
     if (getCookie('modalOpen')) {
         return false;
-    } else {
-        subscribeModal.classList.add('modal_active'); 
-    }
+    } 
+    subscribeModal.classList.add('modal_active');
 });
 
 modalClose.addEventListener('click', function(event) {
@@ -26,12 +25,12 @@ modalClose.addEventListener('click', function(event) {
     
     if (getCookie('modalOpen')) {
         return false;
-    } else {
-        let date = new Date();
+    } 
     
-        date.setDate(date.getDate() + 1);
-        date = date.toUTCString();
+    let date = new Date();
+    
+    date.setDate(date.getDate() + 1);
+    date = date.toUTCString();
 
-        document.cookie = 'modalOpen=true; path=/; expires=' + date;
-    }
+    document.cookie = 'modalOpen=true; path=/; expires=' + date;
 });
